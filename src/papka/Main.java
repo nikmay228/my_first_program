@@ -12,6 +12,5 @@ public class Main {
         int namber2 = in.nextInt();
         int namber3 = namber1 + namber2;
         System.out.printf("Namber3: %d", namber3);
-        ww
     }
 }
