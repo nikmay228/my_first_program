@@ -4,13 +4,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
-        Scanner in = new Scanner(System.in);
-        System.out.print("Input namber1: ");
-        int namber1 = in.nextInt();
-        System.out.print("Input namber2: ");
-        int namber2 = in.nextInt();
-        int namber3 = namber1 + namber2;
-        System.out.printf("Namber3: %d", namber3);
+        int i = -8;
+//число -8 в двоичной системе
+        System.out.println(Integer.toBinaryString(i));
+//обратыный перевод из двоичной системы в десятичную
+        System.out.println(Integer.parseInt("11111111111111111111111111111000", 2));
     }
 }
