@@ -1,40 +1,48 @@
 package papka;
 
-import java.util.Scanner;
-
 public class Main {
-//  Константа на уровне класса
-    public static final String RESULT_PATTERN = "Результат операции: %d";
 
     public static void main(String[] args) {
-//        Константа на уровне метода. Можно использовать её, но лучше выносить константу на уровень класса
-//        final String RESULT_PATTERN = "Результат операции: %d";
+        Triangle t1 = new Triangle(0,0,1,1,2,2);
+        Triangle t2 = new Triangle(1,1,2,2,3,3);
+        t1.printTriangleInfo();
+        t2.printTriangleInfo();
 
-        Scanner in = new Scanner(System.in);
-        System.out.print("Введите первое число: ");
-        final int num1 = in.nextInt();
-
-        System.out.print("Введите второе число: ");
-        final int num2 = in.nextInt();
-
-        System.out.println("Введите номер операции: 1. Сложение 2. Вычитание 3. Умножение");
-        int result;
-
-        switch (in.nextInt()) {
-            case 1:
-                result = num1 + num2;
-                break;
-            case 2:
-                result = num1 - num2;
-                break;
-            case 3:
-                result = num1 * num2;
-                break;
-            default:
-                System.out.print("Операция не определена");
-                return;
-        }
-
-        System.out.printf(RESULT_PATTERN, result);
     }
+}
+class Point {
+    int x;
+    int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+}
+class Triangle {
+
+    Point p1;
+    Point p2;
+    Point p3;
+
+    public Triangle() {
+    }
+
+    Triangle (int x1, int y1, int x2, int y2, int x3, int y3){
+        this.p1 = new Point(x1, y1);
+        this.p2 = new Point(x2, y2);
+        this.p3 = new Point(x3, y3);
+    }
+    public void printTriangleInfo(){
+        System.out.printf("p1[%d,%d],p2[%d,%d],p3[%d,%d]\n",p1.getX(),p1.getY(),p2.getX(),p2.getY(),p3.getX(),p3.getY());
+    }
+
 }
